@@ -1,1 +1,6 @@
 GET http://localhost:3001/api/search
+Content-Type: application/json
+
+{
+    "message":"hello worsfsdgdgld"
+}

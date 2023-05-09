@@ -25,40 +25,13 @@ const router = require('./routes')
 
 app.use('/api',router);
 
-
-// const { response } = require('express');
-// const {Configuration, OpenAIApi} = require('openai'); 
-
-// const config = new Configuration({
-//     apiKey: "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",
-// })
-
-// const openai = new OpenAIApi(config);
-
-// async function sendToChatGPT(message){
-//   const response =  openai.createChatCompletion({
-//         model: "gpt-3.5-turbo",
-
-//         messages: [
-//             {role: 'user', content: message}
-//         ]
-//     })
-//     return response;
-// }
-
-// (async () => {
-//    const response =  await sendToChatGPT('Hello who are you');
-//    console.log(response); 
-// })()
-
-
-  app.get("/", (req, res) => {
+app.get("/", (req, res) => {
     res.sendFile(createPath())
     });
 
 const axios = require('axios');
 
-const data = {
+/* const data = {
   model: "gpt-3.5-turbo",
   messages: [
     {
@@ -77,7 +50,7 @@ axios.post('https://api.openai.com/v1/chat/completions', data, {
 }).then((response) => {
   app.put("/", async (req, res) => {
     const prompt = response.data.choices[0].message.content;
-    console.log('Пришел запрос:'+prompt);
+    // console.log('Пришел запрос:'+prompt);
     // console.log(JSON.stringify(response.data));
     res.status(200).send({
       bot: response.data.choices[0].message.content
@@ -87,7 +60,7 @@ axios.post('https://api.openai.com/v1/chat/completions', data, {
   
 }).catch((error) => {
   console.log(error); 
-});
+}); */
 
 
 
